@@ -16,17 +16,15 @@ def ajax():
     # acceder à mes données de formulaire
     # récuperation de données 1ere étape
     user_text = request.form["userText"]
-    print(type(user_text))
+    #print(type(user_text))
     # response = transform_to_upper(user_text)
     response = get_difference(user_text)
-    print(type(response))
+    #print(type(response))
     #jsonpickle pour transformer set en python, mais en réalité ça fait un string 
     response_type = jsonpickle.encode(response)
-    print(type(response_type))
-    #response_type = jsonify(response)
     #print(type(response_type))
-    print (response_type)
-    # json pour transformer string en json 
+    #print (response_type)
+    # jsonify pour transformer string en json 
     response_type_json = jsonify(response_type)
     print(type(response_type_json))
     #return jsonify(response)

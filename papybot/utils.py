@@ -15,20 +15,12 @@ from papybot.data.stopwords import stopwords_list
 # # non_match = non_match_elements(text, stopwords_list)
 # 	print("No match elements: ", non_match)
 
-def get_difference(text):
-	# return set(text)-set(stopwords_list)
-	#print(type(stopwords_list))
-	#print(type(text))
-	text_list = text.split()
-	print(type(text_list))
-	cleaned_user_texte = set(text_list)-set(stopwords_list)
+def get_difference(user_request):
+
+	user_request_list = user_request.split()
+	print(type(user_request_list))
+	cleaned_user_texte = set(user_request_list)-set(stopwords_list)
 	print (type(cleaned_user_texte))
-	return {"texte-original": text, "text-transformed": cleaned_user_texte }
-	# non_match = list(get_difference(text, stopwords_list))
+	return {"texte-original": user_request, "text-transformed": cleaned_user_texte }
 
 
-
-# def transform_to_upper(text):
-# 	print(text)
-# 	# text.upper texte en majiscule
-# 	return  {"texte-original": text, "text-transformed": text.upper()}
