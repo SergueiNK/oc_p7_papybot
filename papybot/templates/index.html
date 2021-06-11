@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/static/style.css" />
+    <title>Papybot</title>
+    <!-- Style and custom for CSS -->
+    <style>
+        .input--usertext {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Papybot</h1>
+    <p>
+        <img src="static/pictures/robot3.png" alt="papybot pictures"/>
+    </p>
+    <h2>Le Papy Robot guide touristique old school </h2>
+
+    <form id="user-text-form">
+        <p>
+            <label for="userText"></label>
+            <input type ="text" id="userText" class="input--usertext" name="userText" placeholder="Tappes mon petit ta recherche ici">
+            <input type="submit" value="Envoi spatial">
+        </p>
+    </form>
+
+    <script>
+
+    </script>
+    <script src="{{ url_for('static', filename='/scripts.js') }}"></script>
+</body>
+<footer>
+    <p>
+        Projet P7 Openclassrooms <br />
+        <a href="https://github.com/SergueiNK" target="_blank">Lien repo github Serguei Nikolaev</a> <br />
+        <img src="static/pictures/github.png" alt="github pictures"/>
+    </p>
+</footer>
+</html>

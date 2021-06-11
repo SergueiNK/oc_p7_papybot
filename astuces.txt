@@ -1,0 +1,211 @@
+Thierry — 05/23/2021
+@Leto Le mentor évaluateur va regarder:
+- tes tests
+- ton code (python et javascript)
+- ton usage des APIs
+- ton ajax
+- ton front-end
+
+@Thierry je suppose que tu sous-entends que l'efficacité de la recherche est secondaire ?
+
+Thierry — 05/24/2021
+@Leto Non, mais que il y a beaucoup d'éléments subjectifs dans cette notion d'efficacité qui dépend de toute manière plus de l'API que de nous.
+Personnellement, la seule chose que je trouve dérangeante au niveau de google c'est l'obligation de rentrer ses coordonnées bancaires ... du coup, ce sera HERE pour moi :D.
+
+
+Thierry — 05/03/2021
+tu peux, mais elle ne servira à rien, car on ne fait pass l'appel au server via le form
+[10:48 PM]
+@Leto un exemple lors d'un webinaire l'année dernière: https://youtu.be/rIXlp88vSYM
+
+Bonjour @Thierry 
+tes étudiants qui ont utilisé Here, ils ont aussi utilisé la librairie Python associée ?
+
+Thierry — 04/22/2021
+@Leto Non, c'est interdit au p7, pour wikipedia comme pour l'api de geocoding. Il est demandé de réaliser ses wrappers python soi-même(edited)
+
+bonjour à toutes et tous ^^ 
+quel degré de performance est accepté/acceptable pour ce projet ?
+Entre les différentes contraintes de here et Wikipedia, ça me parait compliqué d'avoir un bon taux de réussite car la recherche doit être quand même assez précise, ce qui n'est pas toujours le cas quand on envoie des requêtes "naturelles", même après filtrage.
+
+Thierry — 04/23/2021
+Lorsque ça échoue, laisse Grandpy répondre avec humour
+
+c'est surtout que si ça échoue souvent, j'ai pas envie que ce soit problématique
+[12:48 PM]
+par exemple "tour pise" ne fonctionne pas correctement, alors que "tour de pise" fonctionne mieux. Comme on supprime "de", c'est un vrai problème.(edited)
+[12:49 PM]
+ce serait plus simple avec google je suppose, mais bon, je veux réussir avec here(edited)
+
+Thierry — 04/23/2021
+Le tout est de discuter avec ton mentor pour comprendre pourquoi ça échoue. Durant une soutenance, tu peux présenter également volontairement les limites de ton grandpy et dire si ces limites sont dues au parsing ou à l'api de geocoding.
+
+en principe, sur ce projet, ton formulaire ne fait pas de requête. Tu envois précisément les données via une requête ajax
+
+@Alucard
+tu utilises quoi comme framework pour le p7 ?(edited)
+
+Thierry — 05/03/2021
+flask
+
+Ne fait pas la même chose. Dans notre cas, on veut faire la recherche côté backend également pour trouver un article wikipedia correspondant aux coordonnées . On ne s'intéresse pas que à la carte.
+[7:38 PM]
+Par ailleurs, le guide d'évaluation demande de faire ce travail côté python.
+[7:40 PM]
+L'objectif est (1) de ce former en python et (2) d'apprendre à tester ce type de code en python (en utilisant les mocks et le monkey patching, également un requis).
+
+Beaucoup d'étudiants récupère les coordonnées à l'aide d'une api de geocoding (pas nécessairement celle de google) puis utilise ces coordonnées pour obtenir un article à l'aide de l'api de wikipedia
+
+C'est ma phrase test et généralement les étudiants y arrive de manière relativement consistente. Dans l'absolu, tant que tu arrive à obtenir des infos pertinentes de ton api de geocoding, c'est bon.
+[8:02 PM]
+@vicsim [v1-P9] ce n'est pas une histoire de niveau. Les nettoyages à mettre en oeuvre ici sont des manipulations de chaine de caractère de base et on arrive à de bons résultats avec une approche simple. Ce parsing se situe donc au niveau du projet 3, sans nouveauté côté python. C'est une nouvelle fois surtout un prétexte à écrire des tests
+
+Le projet est vraiment axé tests unitaires, monkeypatching et AJAX, en vrai le parser Google est ultra puissant, c'est pas là qu'on va t'attendre.
+
+Léonard — 12/09/2020
+Hello,
+Petite question rapide : est-ce que le cours de Céline  sur Flask est ok pour connaitre les étapes du déploiement sur Heroku ? Ou bien vous me conseillez un autre tuto/doc ?(edited)
+
+Thierry — 12/09/2020
+Oui, ici il n'y a rien de particulier, car on n'a pas de base de données. L'élément à éventuellement discuter avec ton mentor concerne la gestion p.ex. des clés d'API avec les variables d'environnement
+
+
+Thierry — 11/12/2020
+Je te propose de structurer le projet un peu comme cela:
+grandpy/
+    apiclients/
+        __init__.py
+        googlemaps.py
+        wikipedia.py
+    tests/
+        apiclients/
+            __init__.py
+            test_googlemaps.py
+            test_wikipedia.py
+        __init__.py
+        test_parsers.py
+        test_app.py
+    __init__.py
+    parsers.py
+    app.py # contient la fonction principale du programme que j'ai appeler answer()
+website/
+    static/
+    templates/
+    tests/
+        __init__.py
+        test_views.py
+    __init__.py
+    views.py
+
+
+Ugh ! J'espère que le confinement se passe bien pour tout le monde. Moi je m'arrache les cheveux sur le P7. J'ai du mal à me remettre au codage python et à trouver la logique dans mon code et dans les interactions entre les différents scripts.. Un petit coup de pouce ne serait pas de refus  Je pensais créer trois classes (une pour chaque api, et une pour traiter le message d'entrée de l'utilisateur (pas sûre de mon coup). Est-ce-que c'est dans mon script views que je suis censée appeler mes différentes classes?
+@MarionG Les classes que tu proposes sont très bien. Je propose de ne pas les mettre dans ton module de views. Par exemple, on peut avoir un module apiclients.py dans lequel tu aurais les classes qui s'interfacent avec les APIs de maps et de wikipedia. Un autre module parser.py peut par exemple accueillir une classe responsable de nettoyer la question de l'utilisateur pour en extraire l'information sur le lieu. Cette découpe te permet également de structurer les tests dans les modules de test correspondant (test_apiclients.py, test_parser.py) au sein d'un paquet de tests
+[2:03 PM]
+L'idée avec les vues est qu'elles contiennent le moins de logique métier possible.
+[2:04 PM]
+Selon les logs du dashboard Heroku, tout fonctionne correctement (à part des éléments de mise en page),
+mais la version de mon programme qui passe par Heroku ne réussit jamais à trouver une réponse aux questions de l'utilisateur. 
+
+Alors que le mécanisme de mon parser fonctionne correctement en local: il parvient à afficher un plan  de Google Map en réponse aux questions de l'utilisateur.
+
+https://grandpy-bot-westworld.herokuapp.com/
+@Mica Un soucis avec tes clés d'API? Tu les as définies avec des variables d'environnement?(edited)
+
+
+Thierry — 11/12/2020
+@Thierry ok, mais je ne suis toujours pas sûre de comprendre... Mes instances de classes seront appelées dans le views.py ? Puisque dans mes modules, je n'écris que mes classes et leurs méthodes associées
+@MarionG je propose de te construire une fonction du type:
+def answer(question):
+    """Traite la question de l'utilisateur et renvoie un dictionnaire jsonisable 
+    contenant la réponse de grandpy, l'adresse, les coordonnée, l'article wiki
+    et l'url vers ce dernier."""
+
+cette fonction sera appelée dans ta vue. Elle est responsable d'appeler le parseur, puis ton client google, puis ton client wikipedia, puis réuni toutes les infos nécessaires dans un dictionnaire qu'elle retourne à la fonction appelante.
+
+Ta vue flask se résumera ainsi en 3 lignes:
+1. Récupérer la question depuis la requête HTTP
+2. appeler la fonction answer ci-dessus, en lui envoyant la question du visiteur en argument, et en récupérant le dictionnaire retourné
+3. Transforme le dictionnaire retourné en réponse HTTP json et retourne cette réponse.
+
+Thierry — 04/29/2020
+On peut faire de l'ajax comme on veut au p7, XMLHttpRequest, fetch, axios voir même jquery (même si je ne le conseille à priori pas pour le p7, jquery reste relativement utilisée)(edited)
+Jump
+v1-projet-11
+
+Thierry — 01/07/2020
+L'appel à initMap doit se faire au sein de la fonction de rappel de ta requête ajax. Ma recommandation est de ne pas utiliser les outils de requêtes asynchrones de jquery tant que tu n'a pas compris l'ajax et comment cela fonctionne. Essaie de réduire l'exemple et d'apprendre sur des cas simples. @Nuno Marcelino
+
+Utiliser react pour le p7 risque d'être disproportionné. Il faut en tout cas faire attention de ne pas déplacer de logique côté js et de garder le TDD côté python. Pour le reste tu es libre si tu as quelques projets javascript à ton actif. Si c'est un de tes premiers web, je recommande de le faire en pur js (pas de framework, pas de jquery) et en pur css (pas de bootstrap, knacss ou autre materialize).
+
+En pratique, je recommande de se limiter à du vanilla javascript, pas de jquery, pas de vue, pas de ... pour le projet 7. Pour un premier projet javascript, l'essentiel est d'apprendre et d'entrainer ses compétences en... javascript. Et pour le peu qu'il y a à faire sur ce projet en matière de javascript, même jquery est overkill.(edited)
+Jump
+
+Jquery c'est une librairie pratique pour manipuler le Dom et facile à prendre en main. Ca suffit largement pour le p7 à mon avis.  Les framework Js sont pas associés au cours pour ce projet
+
+TDD n'est pas mal à propos. Par contre, aucune obligation par rapport à Bootstrap et jquery. Mes étudiants n'en font pas sur ce projet
+
+En effet, la plupart des applications flask (API ou site) utilisent une base de données, avec sqlalchemy ou pas, mais Grandpy n'a pas besoin de persistance. Donc ton analyse est correcte. Seule une petite portion du Mega tutoriel est nécessaire pour ce projet. Même la partie ajax, très succincte, n'est pas trop à appliquer ici, puisque, dans l'idéal, je recommanderais de faire ce petit premier projet js sans jquery.
+
+Thierry — 10/11/2019
+Non, c'est pour récupérer l'objet de DOM à partir de ton objet jquery. Ici, je ne cible que un objet, celui que je veux rendre visible à la fin de la page.
+
+Thierry — 10/11/2019
+Parce que c'est la meilleure manière de ne pas apprendre javascript et css, que sur une petite interface comme celle du projet 7, c'est overkill, et qu'avec l'évolution actuelle de javascript, il est plus utile de savoir se passer de jquery que d'en dépendre.
+Jump
+
+JCJ [P13] — 10/11/2019
+Bonjour ; ) pourquoi tu ne recommandes pas jquery et bootstrap ?
+
+Thierry — 10/11/2019
+Bien entendu, jquery, c'est du js et scrollIntoView peut également être utilisée avec jquery $("#mon-element")[0].scrollIntoView()
+
+Les chapitres 1-3 sont suffisants pour le p7 + celui sur ajax (encore qu'il se base sur jquery que je ne recommande pas pour ce projet. Mais permet de comprendre ce qui se passe côté flask)
+
+et du côté js, tu récupères la réponse dans le callback défini dans $.ajax si tu utilises jquery ou dans ajaxPost() si tu utilises la fonction définie dans le cours js de oc.
+
+Thierry — 06/28/2019
+les promesses sont un bon moyen de synchronisation, mais pas enseigné dans le cours js (ni celui de jquery d'ailleurs)
+
+Thierry — 06/28/2019
+Il fait plus de sens de gagner du temps en éliminant les cours jquery et bootstrap de ce projet 7, qu'en éliminiant les cours fondamentaux
+Jump
+
+Thierry — 06/28/2019
+La programmation asynchrone est une chose nouvelle, mais tres importante et il est important d'y passer le temps. De toute manière, il ne fait pas de sens de faire le cours jquery avant d'avoir terminé les cours js
+
+Thierry — 06/28/2019
+Après, mon conseil perso aurait été d'utiliser du javascript sans jquery pour ce premier projet. En fait, ce que tu fais ici, c'est pratiquement l'activité 3 du cours js
+
+Thierry — 06/12/2019
+Il y a aussi beaucoup de cours qu'on peut échelonner. On peut commencer le p7 avec uniquement le cours sur les tests, car on commance par coder le parser et l'UI web est la dernière chose qu'on peut ajouter. Les cours bootstrap et jquery peuvent également être différés un peu, car je recommande de faire le p7 sans. Ils seront nécessaires toutefois sur le p8.(edited)
+Jump
+v1-projet-8
+
+Thierry — 02/22/2019
+le côté flask ne depends pas du choix entre vanilla js ou jquery
+Jump
+
+Damien — 02/22/2019
+et je vois que des tutos avec Jquery$
+
+Thierry — 01/06/2019
+Ma recommandation pour le p7: 1. les tests unitaires et commencer le dev du parser en TDD 2. html/css 3. flask 4. javascript (mettre la priorité sur le vanilla javasvript c-à-d. me pas utiliser jquery)(edited)
+Jump
+
+[M] Mikaelb — 11/17/2018
+renseignes toi sur la doc jquery (ou d'autres docs qui en parlent)
+
+hello, en js (et jquery pour ce projet), tu crées une méthode AJAX (GETsuffit si je dis pas de bêtises), qui va appeler une route de ton projet flask. Cette route appel ensuite ta fonction de parseur, qui va renvoyer des informations. Il faudra enfin que tu transforme ce résultat en objet JSON pour que JS puisse le lire. Voila.(edited)
+Jump
+v1-projet-8
+
+Ottakar — 09/14/2018
+C'est le conseil que m'a fait un pote : 
+Pas de jQuery! C'était bien avant et aujourd'hui JS à  beaucoup évolué! Et pour débuter : NO FRAMEWORK!
+(-:
+Par contre éclaire moi sur cette histoire de transpiler… Là j'utilise fetch (comme dans le tuto JS flask), faut que je transpile mon code?(edited)
+Jump
+
+Thierry — 09/14/2018
+De toute manière, la plupart des p7 que je vois utilise jquery. C'est à mon avis domage de ne pas saisir l'occasion de réaliser le p7 en vanilla js, vu que jquery va probablement disparaître ou perdre en utilité sur le moyen terme. Il serait bien de ne pas en être dépendant.
+
