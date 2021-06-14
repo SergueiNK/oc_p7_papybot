@@ -30,9 +30,9 @@ url_request_hereapi = 'https://geocode.search.hereapi.com/v1/geocode'
 # url_request_hereapi_auto = 'https://autosuggest.search.hereapi.com/v1/autosuggest'
     # hereapi_key = 'Bn9eoZ-0hBETw8Qs6dUJb3ZcbXl7hoa_AVSNi-9Sf5o'
 products_params = {
-"q": ['nantes '],
-"apiKey": "f9Sov_GAYZ4n-fzQzXJCY-ykdQB6hnHwPoHEY31z9S8",
-"items": "address, position"
+                    "q": ['paris'],
+                    "apiKey": "f9Sov_GAYZ4n-fzQzXJCY-ykdQB6hnHwPoHEY31z9S8",
+                    "items": "address, position"
 
 }
 request_response = requests.get(url_request_hereapi, products_params)

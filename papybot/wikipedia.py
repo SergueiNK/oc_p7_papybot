@@ -9,10 +9,10 @@ products_params = {
             "action": "query",
             "prop": "extracts|info",
             "inprop": "url",
-            "exchars": 500,
+            "exchars": 400,
             "explaintext": True,
             "generator": "geosearch",
-            "gscoord": "47.21811|-1.55306",
+            "ggscoord": "48.85717|2.3414",
 
 }
 request_response = requests.get(url_request_wikipedia, products_params)
