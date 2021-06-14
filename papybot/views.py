@@ -1,6 +1,6 @@
 from flask import render_template, jsonify, request
 from . import app
-import jsonpickle
+import json
 # from . utils import transform_to_upper
 from . utils import get_difference
 @app.route("/")
@@ -20,13 +20,14 @@ def ajax():
     # response = transform_to_upper(user_text)
     response = get_difference(user_text)
     #print(type(response))
-    #jsonpickle pour transformer set en python, mais en réalité ça fait un string 
-    response_type = jsonpickle.encode(response)
+    #jsonpickle pour transformer set en python, mais en réalité ça fait un string
+    response_type = json.loads(response)
     #print(type(response_type))
-    #print (response_type)
-    # jsonify pour transformer string en json 
-    response_type_json = jsonify(response_type)
-    print(type(response_type_json))
+    print (response_type)
+    # jsonify pour transformer string en json
+    # response_type_json = jsonify(response_type)
+    # print(type(response_type_json))
     #return jsonify(response)
     #return jsonpickle.encode(response)
-    return response_type_json
+    return response_type
+

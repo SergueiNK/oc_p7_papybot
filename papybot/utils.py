@@ -19,8 +19,8 @@ def get_difference(user_request):
 
 	user_request_list = user_request.split()
 	print(type(user_request_list))
-	cleaned_user_texte = set(user_request_list)-set(stopwords_list)
-	print (type(cleaned_user_texte))
-	return {"texte-original": user_request, "text-transformed": cleaned_user_texte }
+	cleaned_user_texte = list(set(user_request_list)-set(stopwords_list))
+	print(type(cleaned_user_texte))
+	return json.dumps({"texte-original": user_request, "text-transformed": cleaned_user_texte })
 
 
