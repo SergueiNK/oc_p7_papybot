@@ -19,7 +19,6 @@ def ajax():
     #print(type(user_text))
     # response = transform_to_upper(user_text)
     response = get_difference(user_text)
-    #print(type(response))
     #jsonpickle pour transformer set en python, mais en réalité ça fait un string
     response_type = json.loads(response)
     #print(type(response_type))
@@ -27,7 +26,5 @@ def ajax():
     # jsonify pour transformer string en json
     # response_type_json = jsonify(response_type)
     # print(type(response_type_json))
-    #return jsonify(response)
-    #return jsonpickle.encode(response)
     return response_type
 
