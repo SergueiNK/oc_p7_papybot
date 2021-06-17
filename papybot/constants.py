@@ -5,3 +5,4 @@
 #     "apiKey": "here_api_key",
 # }
 
+url_request_hereapi = 'https://geocode.search.hereapi.com/v1/geocode'
