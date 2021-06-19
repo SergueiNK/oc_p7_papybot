@@ -1,14 +1,12 @@
-from flask import render_template, jsonify, request
-from . import app
-import json
+from flask import render_template, request
+from papybot import app
 # from . utils import transform_to_upper
-from .controller import Controller
-
+from papybot.server.controller import Controller
 
 
 @app.route("/")
 def home():
-    return render_template("index.html")
+    return render_template('./index.html')
 
 
 # Ajout de nouveau route pour gérer
@@ -21,9 +19,5 @@ def ajax():
     # acceder à mes données de formulaire
     # récuperation de données 1ere étape
     user_text = request.form["userText"]
-    response_type = controller.get_result_from_here(user_text)
-    # print(str(coord))
-    # jsonify pour transformer string en json
-    # response_type_json = jsonify(response_type)
-    # print(type(response_type_json))
-    return response_type
+    paragraph_response = controller.get_query_paragraph_result(user_text)
+    return paragraph_response
