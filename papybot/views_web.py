@@ -1,6 +1,5 @@
-from flask import render_template, request
+from flask import render_template, request, jsonify
 from papybot import app
-# from . utils import transform_to_upper
 from papybot.server.controller import Controller
 
 
@@ -20,4 +19,5 @@ def ajax():
     # récuperation de données 1ere étape
     user_text = request.form["userText"]
     paragraph_response = controller.get_query_paragraph_result(user_text)
-    return paragraph_response
+    print(type(paragraph_response))
+    return jsonify(paragraph_response)

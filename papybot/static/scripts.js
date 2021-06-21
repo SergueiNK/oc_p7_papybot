@@ -1,5 +1,5 @@
 
-//Style and custom for JS 
+//Style and custom for JS
 //captur of event for JS
 //gonna surch the formular on JS
 //gonna surch the formular on JS
@@ -10,12 +10,12 @@ function postFormData (url, data){
         method: "POST",
         body: data
     })
-    // Recevoir le texte côté js. Concepte promesse. Fct va renvoyer un objet ce qui nous permet de réagir en cas de succés ou de l'erreur. 
+    // Recevoir le texte côté js. Concepte promesse. Fct va renvoyer un objet ce qui nous permet de réagir en cas de succés ou de l'erreur.
     // 1 Réagir en cas de succées
     // response => response.json() permet de transformer le texte en quelque chose qui rassemble à un objet js
     .then(response => response.json())
     // si il y a une erreur ça me permet de renvoyer l'erreur
-    .catch(error => console.log(error)); 
+    .catch(error => console.log(error));
 }
 //listen the event of submission
 form.addEventListener("submit", function (event) {
@@ -24,6 +24,7 @@ form.addEventListener("submit", function (event) {
 
     // Envoyer le contenu du fomulaire au serveur
     postFormData("/ajax", new FormData(form))
+    // Réagir en cas de succées dans .then je peux rahouter la publication du texte sur la page web
     .then(response => {
         console.log(response);
     })
