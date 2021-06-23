@@ -21,6 +21,8 @@ class Controller(object):
         here_api = Hereapi()
         result_texte = parser_texte.get_allowed_text(user_text)
         coord = here_api.get_coord(result_texte)
+        # TODO: passer le dict en string pour l'envoyer à views
+        # coord = coord['lat'], coord['lng']
         print(coord)
         return coord
 
