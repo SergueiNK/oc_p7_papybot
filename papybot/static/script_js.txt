@@ -1,0 +1,15 @@
+$(document).ready(function() {
+    $('form').on('submit', function(event) {
+      $.ajax({
+         data : {
+            userText : $('#userText').val(),
+                },
+            type : 'POST',
+            url : '/ajax'
+           })
+       .done(function(data) {
+         $('#wiki_paragraph').text(data.output).show();
+     });
+     event.preventDefault();
+     });
+});
