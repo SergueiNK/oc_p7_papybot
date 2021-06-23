@@ -32,15 +32,18 @@
 
 $(document).ready(function() {
     $('form').on('submit', function(event) {
+    // + Effacer les datas précedentes à chaque nouvelle réquete
+    // + Envoyer le message d'erreur si data non trouvé (requete échouée)
       $.ajax({
          data : {
             userText : $('#userText').val(),
                 },
-            type : 'POST',
+            type : 'GET',
             url : '/ajax'
            })
        .done(function(data) {
-         $('#wiki_paragraph').text(data.output).show();
+            console.log(data)
+         $('#wiki_paragraph').text(data);
      });
      event.preventDefault();
      });

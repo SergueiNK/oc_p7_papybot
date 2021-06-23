@@ -23,6 +23,7 @@ class Hereapi:
                 constants.url_request_hereapi,
                 self.api_here_params
             )
+            print(request_response.url)
             print(request_response.status_code)
             if request_response.status_code == 200:
                 result_json = json.loads(request_response.text)
