@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <title>Papybot</title>
     <!-- Style and custom for CSS -->
     <style>
@@ -12,32 +16,58 @@
         }
     </style>
 </head>
+
 <body>
-    <h1>Papybot</h1>
-    <p>
-        <img src="static/pictures/robot3.png" alt="papybot pictures"/>
-    </p>
-    <h2>Le Papy Robot guide touristique old school </h2>
+    <header class="nav-bar">
 
-    <form id="user-text-form">
-        <p>
-            <label for="userText"></label>
-            <input type ="text" id="userText" class="input--usertext" name="userText" placeholder="Tappes mon petit ta recherche ici">
-            <input type="submit" value="Envoi spatial">
-        </p>
-    </form>
-    <!--Place to display the wiki paragraph-->
 
-    <div id="wiki_paragraph"> </div>
+    </header>
+    <section class="container mb-5">
+        <div class="nav-brand mb-5">
+            <img class="img-fluid" src="static/pictures/robot3.png" alt="papybot pictures" />
+            <h1>Papybot</h1>
+        </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="{{ url_for('static', filename='/scripts.js') }}"></script>
+        <h2>Le Papy Robot guide touristique old school </h2>
+        <form id="user-text-form">
+            <div class="input-group">
+                <label class="form-label" for="userText"></label>
+                <input type="text" id="userText" class="form-control" name="userText"
+                    placeholder="Tappes mon petit ta recherche ici">
+                <input class="btn btn-primary" type="submit" value="Envoi spatial">
+            </div>
+            <div id="spinner" class="visually-hidden spinner-border" role="status">
+                <span class="visually-hidden">Loading...</span>
+            </div>
+        </form>
+        <!--Place to display the wiki paragraph-->
+
+        <div id="wiki_paragraph"></div>
+        <div id="map"></div>
+    </section>
+    <footer class="container-fluid border-top p-3">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <span class="h5 mb-3">Projet P7 Openclassrooms</span>
+                    <p><a class="mb-2" href="https://github.com/SergueiNK" target="_blank" rel="external">Lien repo
+                            github Serguei Nikolaev</a></p>
+                    <p><img class="img-fluid" src="static/pictures/github.png" alt="github pictures" /></p>
+                </div>
+                <div class="col">
+                    <span class="h5 mb-3">D'autres projets ?</span>
+                    <ul>
+                        <li><a href="" title="" target="_blank">1er projet</a></li>
+                        <li><a href="" title="" target="_blank">2eme projet</a></li>
+                        <li><a href="" title="" target="_blank">3eme projet</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 </body>
-<footer>
-    <p>
-        Projet P7 Openclassrooms <br />
-        <a href="https://github.com/SergueiNK" target="_blank">Lien repo github Serguei Nikolaev</a> <br />
-        <img src="static/pictures/github.png" alt="github pictures"/>
-    </p>
-</footer>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+<script src="{{ url_for('static', filename='/scripts.js') }}"></script>
+
 </html>

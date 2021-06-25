@@ -8,3 +8,14 @@ h2
 {
     color:darkblue
 }
+
+.leaflet-container {
+    height: 300px;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 9999;
+}
