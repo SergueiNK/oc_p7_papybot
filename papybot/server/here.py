@@ -33,6 +33,8 @@ class Hereapi:
                 else:
                     raise Exception("No results found")
             else:
-                raise Exception(f"{request_response.status_code} {request_response.text}")
+                # raise Exception(f"{request_response.status_code} {request_response.text}")
+                print(request_response.status_code)
+                return request_response.status_code
         except Exception as e:
             raise e

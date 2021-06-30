@@ -40,6 +40,7 @@ class Wikiapi:
                 )
             else:
                 raise Exception(f"{request_response.status_code} {request_response.text}")
+                # return response.status_code
         except Exception as e:
             raise e
 

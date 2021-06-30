@@ -21,7 +21,9 @@ def ajax():
     user_text = request.args.get('userText')
     paragraph_response = controller.get_query_paragraph_result(user_text)
     coord_response = controller.get_coord_from_here(user_text)
-    # print(coord_response)
-    # print(type(coord_response))
+    print(coord_response)
+    print(type(coord_response))
+    print(paragraph_response)
+    print(type(paragraph_response))
     return jsonify(paragraph_response, coord_response)
 

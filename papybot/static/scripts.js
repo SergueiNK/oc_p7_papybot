@@ -17,8 +17,13 @@ $(document).ready(function () {
                 $('#spinner').addClass('visually-hidden');
             }
         }).done(function (data) {
+            if (data[1] >= 201 && data[1] <= 599){
+                $('#alert_error').append("<p>" + "Clarifie ta demande mon petit" + "</p>");
+            } else {
             constructMap(data[1]);
             $('#wiki_paragraph').append("<p>" + data[0] + "</p>");
+            location.reload();
+            }
         });
     });
 });
