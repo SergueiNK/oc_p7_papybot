@@ -2,8 +2,9 @@
 $(document).ready(function () {
     $('form').on('submit', function (event) {
         event.preventDefault();
+        // renvois une page vide à chauqe appui
+        $('form').off('submit');
         // + Effacer les datas précedentes à chaque nouvelle réquete
-        // + Envoyer le message d'erreur si data non trouvé (requete échouée)
         $.ajax({
             data: {
                 userText: $('#userText').val(),
@@ -17,12 +18,12 @@ $(document).ready(function () {
                 $('#spinner').addClass('visually-hidden');
             }
         }).done(function (data) {
+            // + Envoyer le message d'erreur si data non trouvé (requete échouée)
             if (data[1] >= 201 && data[1] <= 599){
                 $('#alert_error').append("<p>" + "Clarifie ta demande mon petit" + "</p>");
             } else {
             constructMap(data[1]);
-            $('#wiki_paragraph').append("<p>" + data[0] + "</p>");
-            location.reload();
+            $('#wiki_paragraph').append("<p>" + data[0] + "</p>");    
             }
         });
     });
