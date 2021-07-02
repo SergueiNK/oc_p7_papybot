@@ -23,18 +23,19 @@ class Hereapi:
                 constants.url_request_hereapi,
                 self.api_here_params
             )
-            print(request_response.url)
-            print(request_response.status_code)
+            # print(request_response.url)
+            # print(request_response.status_code)
             if request_response.status_code == 200:
                 result_json = json.loads(request_response.text)
                 items_list = result_json.get('items')
+                # print(items_list)
                 if len(items_list) > 0:
-                    return items_list[0].get('position')
+                    return items_list[0].get('position'), items_list[0].get('address').get('label')
                 else:
                     raise Exception("No results found")
             else:
-                # raise Exception(f"{request_response.status_code} {request_response.text}")
-                print(request_response.status_code)
                 return request_response.status_code
         except Exception as e:
             raise e
+
+

@@ -33,14 +33,12 @@ class Wikiapi:
                 constants.url_request_wikipedia,
                 self.api_wiki_params
             )
-            print(request_response.status_code)
             if request_response.status_code == 200:
                 return self.extract_wiki_section(
                     json.loads(request_response.text)
                 )
             else:
                 raise Exception(f"{request_response.status_code} {request_response.text}")
-                # return response.status_code
         except Exception as e:
             raise e
 

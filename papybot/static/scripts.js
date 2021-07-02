@@ -4,14 +4,26 @@ $(document).ready(function () {
         event.preventDefault();
         // Si map a du contenu,
         // Supprimer le contenu de la balise MAP.
-        if ($('#map').children().length > 0); {
+        if ($('#map').children().length > 0) {
             $('#map').remove();
             $('#map-wrapper').append('<div id="map"></div>');
         }
-            //($('#wiki_paragraph').children().length > 0) {
-            //$('#wiki_paragraph').remove();
-            //$('#wiki_paragraph-wrapper').append('<div id="wiki_paragraph"></div>');
-        //}
+            ($('#wiki_paragraph').children().length > 0) ;{
+            $('#wiki_paragraph').remove();
+            $('#wiki_paragraph-wrapper').append('<div id="wiki_paragraph"></div>');
+        }
+
+            ($('#alert_error').children().length > 0) ;{
+            $('#alert_error').remove();
+            $('#alert_error-wrapper').append('<div id="alert_error"></div>');
+
+        }
+
+            ($('#here_address').children().length > 0) ;{
+            $('#here_address').remove();
+            $('#here_address-wrapper').append('<div id="here_address"></div>');
+
+        }
         // + Effacer les datas précedentes à chaque nouvelle réquete
         $.ajax({
 
@@ -35,7 +47,9 @@ $(document).ready(function () {
             } else {
                 $('#userText').val('');
                 constructMap(data[1]);
-                $('#wiki_paragraph').append("<p>" + data[0] + "</p>");
+                $('#wiki_paragraph').append("<p>" + "Laisses papi te raconter une petite histoire:", data[0] + "</p>");
+                console.log(data[2]);
+                $('#here_address').append("<p>" + "Haha papou a même une adresse pour toi:", data[2] + "</p>");
             }
 
         }).fail(function (jqXHR, textStatus, errorThrown) {
@@ -55,7 +69,7 @@ function constructMap(cord) {
     }).addTo(map);
 
     L.marker([cord.lat, cord.lng]).addTo(map)
-        .bindPopup('A pretty CSS3 popup.<br> Easily customizable.')
+        .bindPopup('Hohoho mon petit.<br> Voici le point sur la carte que tu cherches.')
         .openPopup();
 
 
@@ -64,9 +78,9 @@ function constructMap(cord) {
 function displayError(){
     $('#alert_error').append(
         $('<div>').addClass('alert alert-danger d-flex align-items-center').attr('role', 'alert')
-        .append( 
-            $('<p>').text("Clarifie ta demande mon petit") 
+        .append(
+            $('<p>').text("Clarifie ta demande mon petit")
             )
             )
-    
+
 }
