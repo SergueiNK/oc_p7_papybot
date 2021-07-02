@@ -23,6 +23,7 @@
 
     </header>
     <section class="container mb-5">
+        <!--Branding section-->
         <div class="nav-brand mb-5">
             <img class="img-fluid" src="static/pictures/robot3.png" alt="papybot pictures" />
             <h1>Papybot</h1>
@@ -31,10 +32,18 @@
         <h2>Le Papy Robot guide touristique old school </h2>
 
         <!--Place to display the wiki paragraph-->
+        <div id = "wiki_paragraph-wrapper" class="mb-3">
         <div id="wiki_paragraph"></div>
-        <div id="map"></div>
+        </div>
+        <div id="map-wrapper" class="mb-3">
+            <div id="map"></div>
+        </div>
+
         <!--Alerte when error of https-->
         <div id="alert_error"></div>
+
+
+        <!--Form-->
         <form id="user-text-form">
             <div class="input-group">
                 <label class="form-label" for="userText"></label>
@@ -46,7 +55,10 @@
                 <span class="visually-hidden">Loading...</span>
             </div>
         </form>
+
     </section>
+
+    <!--Footer-->
     <footer class="container-fluid border-top p-3">
         <div class="container">
             <div class="row">
@@ -67,7 +79,9 @@
             </div>
         </div>
     </footer>
+
 </body>
+
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 <script src="{{ url_for('static', filename='/scripts.js') }}"></script>
