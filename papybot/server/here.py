@@ -23,11 +23,13 @@ class Hereapi:
                 constants.url_request_hereapi,
                 self.api_here_params
             )
-            # print(request_response.url)
+            print(request_response.url)
             # print(request_response.status_code)
             if request_response.status_code == 200:
                 result_json = json.loads(request_response.text)
+                print(result_json)
                 items_list = result_json.get('items')
+                print(items_list)
                 # print(items_list)
                 if len(items_list) > 0:
                     return items_list[0].get('position'), items_list[0].get('address').get('label')

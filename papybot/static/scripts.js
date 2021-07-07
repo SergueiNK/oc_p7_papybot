@@ -2,28 +2,18 @@
 $(document).ready(function () {
     $('form').on('submit', function (event) {
         event.preventDefault();
+
+        $('#wiki_paragraph').empty();
+        $('#alert_error').empty();
+        $('#here_address').empty();
+
         // Si map a du contenu,
         // Supprimer le contenu de la balise MAP.
         if ($('#map').children().length > 0) {
             $('#map').remove();
             $('#map-wrapper').append('<div id="map"></div>');
         }
-            ($('#wiki_paragraph').children().length > 0) ;{
-            $('#wiki_paragraph').remove();
-            $('#wiki_paragraph-wrapper').append('<div id="wiki_paragraph"></div>');
-        }
 
-            ($('#alert_error').children().length > 0) ;{
-            $('#alert_error').remove();
-            $('#alert_error-wrapper').append('<div id="alert_error"></div>');
-
-        }
-
-            ($('#here_address').children().length > 0) ;{
-            $('#here_address').remove();
-            $('#here_address-wrapper').append('<div id="here_address"></div>');
-
-        }
         // + Effacer les datas précedentes à chaque nouvelle réquete
         $.ajax({
 
