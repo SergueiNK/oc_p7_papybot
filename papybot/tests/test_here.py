@@ -54,22 +54,47 @@ def test_get_response_success(monkeypatch) :
                 "items": "address, position"
             }
 
-        def json(self):
+        def test_return_api(self):
+
             return sucess_request_result
 
-    def mock_get(self):
+    def mock_get(url, api_here_params ):
         return MockResponse()
 
 
-    here_mock = Hereapi("Openclassrooms ? Ou situe paris")
-    # monkeypatch.setattr(requests, "get", mock_get)
-    monkeypatch.setattr("request.get", mock_get)
-    # assert Hereapi == (200, 'https://geocode.search.hereapi.com/v1/geocode?' \
-    #                    'q=situe+Openclassrooms+Ou+paris&apiKey=' \
-    #                    'f9Sov_GAYZ4n-fzQzXJCY-ykdQB6hnHwPoHEY31z9S8&items=' \
-    #                    'address%2C+position')
+    here_mock = Hereapi()
 
-    position, label = here_mock.get_coord()
+    # monkeypatch.setattr(requests, "get", mock_get)
+    monkeypatch.setattr(requests, "get", mock_get)
+
+    position = here_mock.get_coord("Paris")
     position = {'lat': 48.87489, 'lng': 2.35051}
     assert(sucess_request_result['items'][0].get('position') == position)
 
+    # monkeypatch.setattr(requests, 'get', mock_get)
+    # assert  Hereapi.get_coord("", "Openclassrooms ? Ou paris situe") == (200, sucess_request_result['items'][0].get('position'))
+
+# class MockResponse:
+#
+#     # mock json() method always returns a specific testing dictionary
+#     @staticmethod
+#     def json():
+#         return sucess_request_result
+#
+#
+# def test_get_json(monkeypatch):
+#
+#     # Any arguments may be passed and mock_get() will always return our
+#     # mocked object, which only has the .json() method.
+#
+#     def mock_get(*args, **kwargs):
+#         return MockResponse()
+#
+#     # apply the monkeypatch for requests.get to mock_get
+#     monkeypatch.setattr(requests, "get", mock_get)
+#
+#     # app.get_json, which contains requests.get, uses the monkeypatch
+#     here_mock = Hereapi()
+#     result = here_mock.get_coord("Paris")
+#     position = {'lat': 48.87489, 'lng': 2.35051}
+#     assert (result['items'][0].get('position') == position)
