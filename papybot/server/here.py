@@ -1,6 +1,7 @@
 import requests
 import json
 from papybot.server.utils import constants
+import os
 
 
 class Hereapi:
@@ -13,11 +14,12 @@ class Hereapi:
         return cls._instance
 
     def get_coord(self, user_text):
+        key_here = os.environ.get('SECRET_KEY_HERE')
+        # print(key_here)
         try:
             self.api_here_params = {
                 "q": f"{user_text}",
-                "apiKey": "f9Sov_GAYZ4n-fzQzXJCY-ykdQB6hnHwPoHEY31z9S8",
-                "items": "address, position"
+                "apiKey": f"{key_here}",
             }
             request_response = requests.get(
                 constants.url_request_hereapi,
