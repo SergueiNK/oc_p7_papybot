@@ -81,4 +81,5 @@ stopwords_list = [
     "vers", "via", "vif", "vifs", "vingt", "vivat", "vive", "vives", "vlan",
     "voici", "voilà", "vont", "vos", "votre", "vous", "vous-mêmes", "vu", "vé",
     "vôtre", "vôtres", "w", "x", "y", "z", "zut", "à", "â", "ça", "ès",
-    "étaient", "étais", "était", "étant", "été", "être", "ô"]
+    "étaient", "étais", "était", "étant", "été", "être", "ô", "Salut", "salut", "papy", "Papy",
+    "m'", "trouve", "trouver", "?", "!", ".", ";", "%", "m'indiquer", "t'as", "Est-ce", "veux", "aller", "adresse"]

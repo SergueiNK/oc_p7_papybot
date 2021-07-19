@@ -79,14 +79,26 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                    "pagelanguage": "fr",
                                                    "pagelanguagehtmlcode": "fr",
                                                    "pagelanguagedir": "ltr",
-                                                   "touched": "2021-07-19T08:43:35Z",
+                                                   "touched": "2021-07-19T08"
+                                                              ":43:35Z",
                                                    "lastrevid": 179187226,
                                                    "length": 4743,
-                                                   "fullurl": "https://fr.wikipedia.org/wiki/Rue_des_Petites-%C3%89curies_(Paris)",
-                                                   "editurl": "https://fr.wikipedia.org/w/index.php?title=Rue_des_Petites-%C3%89curies_(Paris)&action=edit",
-                                                   "canonicalurl": "https://fr.wikipedia.org/wiki/Rue_des_Petites-%C3%89curies_(Paris)"},
+                                                   "fullurl": "https://fr"
+                                                              ".wikipedia.org"
+                                                              "/wiki/Rue_des_"
+                                                              "Petites-"
+                                                              "%C3%89curies_"
+                                                              "(Paris)",
+                                                   "editurl": "https://fr"
+                                                              ".wikipedia.org"
+                                                              "/w/index.php"
+                                                              "?title"
+                                                              "=Rue_des_Petites-%C3%89curies_(Paris)&action=edit",
+                                                   "canonicalurl": "https://fr.wikipedia.org/wiki/Rue_des_Petites-%C3"
+                                                                   "%89curies_(Paris)"},
                                         "4538146": {"pageid": 4538146, "ns": 0,
-                                                    "title": "Rue des Messageries",
+                                                    "title": "Rue des "
+                                                             "Messageries",
                                                     "index": 1,
                                                     "contentmodel": "wikitext",
                                                     "pagelanguage": "fr",
@@ -96,8 +108,10 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 182170604,
                                                     "length": 7242,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/Rue_des_Messageries",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=Rue_des_Messageries&action=edit",
-                                                    "canonicalurl": "https://fr.wikipedia.org/wiki/Rue_des_Messageries"},
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=Rue_des_Messageries&action=edit",
+                                                    "canonicalurl":
+                                                        "https://fr.wikipedia.org/wiki/Rue_des_Messageries"},
                                         "5091748": {"pageid": 5091748, "ns": 0,
                                                     "title": "H\u00f4tel Bourrienne",
                                                     "index": 2,
@@ -109,8 +123,11 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 183863112,
                                                     "length": 5959,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Bourrienne",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=H%C3%B4tel_Bourrienne&action=edit",
-                                                    "canonicalurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Bourrienne"},
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=H%C3"
+                                                        "%B4tel_Bourrienne&action=edit",
+                                                    "canonicalurl":
+                                                        "https://fr.wikipedia.org/wiki/H%C3%B4tel_Bourrienne"},
                                         "5423183": {"pageid": 5423183, "ns": 0,
                                                     "title": "Rue Gabriel-Laumain",
                                                     "index": 3,
@@ -122,8 +139,11 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 176732188,
                                                     "length": 3051,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/Rue_Gabriel-Laumain",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=Rue_Gabriel-Laumain&action=edit",
-                                                    "canonicalurl": "https://fr.wikipedia.org/wiki/Rue_Gabriel-Laumain"},
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=Rue_Gabriel"
+                                                        "-Laumain&action=edit",
+                                                    "canonicalurl":
+                                                        "https://fr.wikipedia.org/wiki/Rue_Gabriel-Laumain"},
                                         "5424968": {"pageid": 5424968, "ns": 0,
                                                     "title": "Cit\u00e9 d'Hauteville",
                                                     "index": 4,
@@ -135,8 +155,11 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 180704298,
                                                     "length": 2321,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_d%27Hauteville",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=Cit%C3%A9_d%27Hauteville&action=edit",
-                                                    "canonicalurl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_d%27Hauteville"},
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=Cit%C3%A9_d"
+                                                        "%27Hauteville&action=edit",
+                                                    "canonicalurl":
+                                                        "https://fr.wikipedia.org/wiki/Cit%C3%A9_d%27Hauteville"},
                                         "5653202": {"pageid": 5653202, "ns": 0,
                                                     "title": "Cit\u00e9 Paradis",
                                                     "index": 5,
@@ -148,7 +171,9 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 158323205,
                                                     "length": 2824,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_Paradis",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=Cit%C3%A9_Paradis&action=edit",
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=Cit%C3%A9_Paradis"
+                                                        "&action=edit",
                                                     "canonicalurl": "https://fr.wikipedia.org/wiki/Cit%C3%A9_Paradis"},
                                         "6029848": {"pageid": 6029848, "ns": 0,
                                                     "title": "H\u00f4tel Titon",
@@ -161,7 +186,9 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "lastrevid": 160431982,
                                                     "length": 2980,
                                                     "fullurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Titon",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=H%C3%B4tel_Titon&action=edit",
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=H%C3%B4tel_Titon"
+                                                        "&action=edit",
                                                     "canonicalurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Titon"},
                                         "6035646": {"pageid": 6035646, "ns": 0,
                                                     "title": "H\u00f4tel Botterel de Quintin",
@@ -173,9 +200,13 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                     "touched": "2021-07-18T19:22:07Z",
                                                     "lastrevid": 179986499,
                                                     "length": 1906,
-                                                    "fullurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Botterel_de_Quintin",
-                                                    "editurl": "https://fr.wikipedia.org/w/index.php?title=H%C3%B4tel_Botterel_de_Quintin&action=edit",
-                                                    "canonicalurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_Botterel_de_Quintin"},
+                                                    "fullurl":
+                                                        "https://fr.wikipedia.org/wiki/H%C3%B4tel_Botterel_de_Quintin",
+                                                    "editurl":
+                                                        "https://fr.wikipedia.org/w/index.php?title=H%C3"
+                                                        "%B4tel_Botterel_de_Quintin&action=edit",
+                                                    "canonicalurl":
+                                                        "https://fr.wikipedia.org/wiki/H%C3%B4tel_Botterel_de_Quintin"},
                                         "12586074": {"pageid": 12586074,
                                                      "ns": 0,
                                                      "title": "H\u00f4tel de Raguse",
@@ -188,5 +219,8 @@ wiki_test_result = {"continue": {"excontinue": 1, "continue": "||info"},
                                                      "lastrevid": 183330915,
                                                      "length": 7495,
                                                      "fullurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_de_Raguse",
-                                                     "editurl": "https://fr.wikipedia.org/w/index.php?title=H%C3%B4tel_de_Raguse&action=edit",
-                                                     "canonicalurl": "https://fr.wikipedia.org/wiki/H%C3%B4tel_de_Raguse"}}}}
+                                                     "editurl":
+                                                         "https://fr.wikipedia.org/w/index.php?title=H%C3"
+                                                         "%B4tel_de_Raguse&action=edit",
+                                                     "canonicalurl":
+                                                         "https://fr.wikipedia.org/wiki/H%C3%B4tel_de_Raguse"}}}}

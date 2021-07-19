@@ -24,7 +24,7 @@ class Controller(object):
     def location_from_here(self, user_text):
         here_api = Hereapi()
         result_texte = parser_texte.get_allowed_text(user_text)
-        # print(result_texte)
+        print(result_texte)
         # print(type(result_texte))
         location = here_api.get_coord(result_texte)
         return location
