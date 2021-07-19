@@ -6,6 +6,7 @@ $(document).ready(function () {
         $('#wiki_paragraph').empty();
         $('#alert_error').empty();
         $('#here_address').empty();
+        $('#papy_history').empty();
 
         // Si map a du contenu,
         // Supprimer le contenu de la balise MAP.
@@ -37,9 +38,9 @@ $(document).ready(function () {
             } else {
                 $('#userText').val('');
                 constructMap(data[1]);
-                $('#wiki_paragraph').append("<p>" + "Laisses papi te raconter une petite histoire:", data[0] + "</p>");
-                console.log(data[2]);
-                $('#here_address').append("<p>" + "Haha papou a même une adresse pour toi:", data[2] + "</p>");
+                $('#papy_history').append("<h5>" + "Haha laisses papou te raconter une petite histoire et te donner l'adresse: " + "</h5>");
+                displayWiki(data[0]);
+                displayHere(data[2])
             }
 
         }).fail(function (jqXHR, textStatus, errorThrown) {
@@ -70,6 +71,26 @@ function displayError(){
         $('<div>').addClass('alert alert-danger d-flex align-items-center').attr('role', 'alert')
         .append(
             $('<p>').text("Clarifie ta demande mon petit")
+            )
+            )
+
+}
+
+function displayWiki(text){
+    $('#wiki_paragraph').append(
+        $('<div>').addClass('alert alert-primary d-flex align-items-center').attr('role', 'alert')
+        .append(
+            "<p>" + text + "</p>",
+            )
+            )
+
+}
+
+function displayHere(address){
+    $('#here_address').append(
+        $('<div>').addClass('alert alert-success d-flex align-items-center').attr('role', 'alert')
+        .append(
+            "<p>" + address + "</p>"
             )
             )
 
