@@ -1,10 +1,35 @@
-h1
+.input--usertext 
 {
-    color:d
+    width: 300px;
 }
 
+h1
+{
+    text-align: center;
+    color:d
+    
+}
+
+img.img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 h2
 {
+    text-align: center;
     color:darkblue
 }
+
+.leaflet-container {
+    height: 300px;
+}
+
+#spinner {
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    z-index: 9999;
+}
+
