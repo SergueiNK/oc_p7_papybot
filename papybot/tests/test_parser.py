@@ -2,7 +2,7 @@ from papybot.server.utils import parser_texte
 
 
 def test_parser():
-    """ Test from data isolated"""
+    """ Test the from isolated data"""
 
     question_1 = "Salut papy est ce que tu peux " \
                  "m'indiquer où se trouve Paris ? "

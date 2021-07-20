@@ -1,3 +1,5 @@
+"""Suced return API for used like exemple"""
+
 here_api_return = {'items': [{'title': 'Openclassrooms',
                               'id': 'here:pds:'
                                     'place:250u09wj-'

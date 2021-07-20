@@ -3,21 +3,20 @@ $(document).ready(function () {
     $('form').on('submit', function (event) {
         event.preventDefault();
 
+        // Delete the existing data
         $('#wiki_paragraph').empty();
         $('#alert_error').empty();
         $('#here_address').empty();
         $('#papy_history').empty();
 
-        // Si map a du contenu,
-        // Supprimer le contenu de la balise MAP.
+        // Delete the existing data if exist
         if ($('#map').children().length > 0) {
             $('#map').remove();
             $('#map-wrapper').append('<div id="map"></div>');
         }
 
-        // + Effacer les datas précedentes à chaque nouvelle réquete
         $.ajax({
-
+            // ajax request get
             data: {
                 userText: $('#userText').val(),
             },
@@ -31,20 +30,22 @@ $(document).ready(function () {
             }
 
         }).done(function (data, textStatus, jqXHR) {
-             // + Envoyer le message d'erreur si data non trouvé (requete échouée)
+             // Send the error message if data not find
              if (data[1] >= 201 && data[1] <= 599) {
                 displayError();
                 console.exception(jqXHR);
             } else {
+                //Display the map
                 $('#userText').val('');
                 constructMap(data[1]);
+                //Display the wiki paragraph and address
                 $('#papy_history').append("<h5>" + "Haha laisses papou te raconter une petite histoire et te donner l'adresse: " + "</h5>");
                 displayWiki(data[0]);
                 displayHere(data[2])
             }
 
         }).fail(function (errorThrown) {
-            console.exception(errorThrown);
+            //Display error if problem with user request data
             displayError();
         });
     });
@@ -52,6 +53,7 @@ $(document).ready(function () {
 
 
 function constructMap(cord) {
+    // Construction map
     var map = L.map('map').setView([cord.lat, cord.lng], 13);
 
     L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -64,6 +66,7 @@ function constructMap(cord) {
 }
 
 function displayError(){
+    // Dispaly error
     $('#alert_error').append(
         $('<div>').addClass('alert alert-danger d-flex align-items-center').attr('role', 'alert')
         .append(
@@ -73,6 +76,7 @@ function displayError(){
 }
 
 function displayWiki(text){
+    // Display wiki paragraph
     $('#wiki_paragraph').append(
         $('<div>').addClass('alert alert-primary d-flex align-items-center').attr('role', 'alert')
         .append(
@@ -82,6 +86,7 @@ function displayWiki(text){
 }
 
 function displayHere(address){
+    // Display Here address
     $('#here_address').append(
         $('<div>').addClass('alert alert-success d-flex align-items-center').attr('role', 'alert')
         .append(

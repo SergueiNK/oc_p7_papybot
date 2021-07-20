@@ -4,19 +4,21 @@ from papybot.tests import test_constants
 
 
 class MockResponse:
-
+    """Mock reposnse for requests"""
     def __init__(self):
+        """Initialize the mock class"""
         self.sucess_request_result = test_constants.wiki_api_return
         self.status_code = 200
 
     def json(self):
+        """Mocking json response from API"""
         return self.sucess_request_result
 
 
 def test_wiki_article(monkeypatch):
-
+    """Test here class with monkey patch """
     def mock_get(*args, **kwargs):
-
+        """Mock get method if success"""
         return MockResponse()
 
     monkeypatch.setattr(requests, "get", mock_get)

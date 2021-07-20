@@ -7,12 +7,17 @@ class Hereapi:
     _instance = None
 
     def __new__(cls):
+        """Creating a singleton"""
         if cls._instance is None:
             print('Création d\'une instance Hereapi')
             cls._instance = super(Hereapi, cls).__new__(cls)
         return cls._instance
 
     def get_coord(self, user_text):
+        """
+        Send the API request with params.
+        Return the API data. Sort the API data.
+        """
         key_here = os.environ.get('SECRET_KEY_HERE')
         try:
             self.api_here_params = {

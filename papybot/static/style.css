@@ -1,3 +1,8 @@
+.input--usertext 
+{
+    width: 300px;
+}
+
 h1
 {
     text-align: center;
@@ -27,3 +32,4 @@ h2
     right: 50%;
     z-index: 9999;
 }
+

@@ -8,13 +8,17 @@ class Wikiapi:
         api wiki
     """
     def __new__(cls):
+        """Creating a singleton"""
         if cls._instance is None:
             print('Création d\'une instance Wikiapi')
             cls._instance = super(Wikiapi, cls).__new__(cls)
         return cls._instance
 
     def wikipedia_get_article(self, latitude, longitude):
-
+        """
+        Send the API request with params.
+        Return the API data. Sort the API data.
+        """
         try:
             self.api_wiki_params = {
                 "format": "json",
