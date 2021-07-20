@@ -1,11 +1,19 @@
 h1
 {
+    text-align: center;
     color:d
+    
 }
 
+img.img-fluid {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 h2
 {
+    text-align: center;
     color:darkblue
 }
 
