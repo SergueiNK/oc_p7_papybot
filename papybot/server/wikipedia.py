@@ -1,5 +1,4 @@
 import requests
-import json
 from papybot.server.utils import constants
 
 
@@ -33,14 +32,12 @@ class Wikiapi:
                 constants.url_request_wikipedia,
                 self.api_wiki_params
             )
-            # print(request_response.url)
+
             if request_response.status_code == 200:
-                # return self.extract_wiki_section(
-                #     json.loads(request_response.text)
-                # )
                 return self.extract_wiki_section(request_response.json())
             else:
-                raise Exception(f"{request_response.status_code} {request_response.text}")
+                raise Exception(f"{request_response.status_code} "
+                                f"{request_response.text}")
         except Exception as e:
             raise e
 

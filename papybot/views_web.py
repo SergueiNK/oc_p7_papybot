@@ -8,10 +8,6 @@ def home():
     return render_template('./index.html')
 
 
-# Ajout de nouveau route pour gérer
-# les appels ajax et envoyer une réponse jsonify
-
-
 @app.route("/ajax", methods=["GET"])
 def ajax():
     controller = Controller()
@@ -22,13 +18,7 @@ def ajax():
     paragraph_response = controller.get_query_paragraph_result(user_text)
     coord_response = controller.get_coord_from_here(user_text)
     address_response = controller.get_address_from_here(user_text)
-    # print(address_response)
-    # print(type(address_response))
-    # print(coord_response)
-    # print(type(coord_response))
-    # print(paragraph_response)
-    # print(type(paragraph_response))
-    response = make_response(jsonify(paragraph_response, coord_response, address_response))
-    # print(response.status)
-    return response
+    response = make_response(jsonify(paragraph_response, coord_response,
+                                     address_response))
 
+    return response

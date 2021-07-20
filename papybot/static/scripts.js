@@ -43,8 +43,7 @@ $(document).ready(function () {
                 displayHere(data[2])
             }
 
-        }).fail(function (jqXHR, textStatus, errorThrown) {
-            console.log(jqXHR);
+        }).fail(function (errorThrown) {
             console.exception(errorThrown);
             displayError();
         });
@@ -62,8 +61,6 @@ function constructMap(cord) {
     L.marker([cord.lat, cord.lng]).addTo(map)
         .bindPopup('Hohoho mon petit.<br> Voici le point sur la carte que tu cherches.')
         .openPopup();
-
-
 }
 
 function displayError(){
@@ -73,7 +70,6 @@ function displayError(){
             $('<p>').text("Clarifie ta demande mon petit")
             )
             )
-
 }
 
 function displayWiki(text){
@@ -83,7 +79,6 @@ function displayWiki(text){
             "<p>" + text + "</p>",
             )
             )
-
 }
 
 function displayHere(address){
@@ -93,5 +88,4 @@ function displayHere(address){
             "<p>" + address + "</p>"
             )
             )
-
 }
