@@ -1,6 +1,4 @@
 modules checked without docstrings: 
-- All modules are ok
-- test_constants.py line too long stay the same for readness
 - __init__.py in papybot : 
 papybot\__init__.py:5:1: E402 module level import not at top of file
 papybot\__init__.py:5:1: F401 '.views_web' imported but unused

@@ -10,7 +10,9 @@ questions that will works all of time.
 Because of parser is not yet perfect and work all of the time. 
 
 1. Salut papy est ce que tu peux m'indiquer ou se trouve Openclassroom Paris ?
-2. Salut 
+2. Papy je veux partir en voyage à Bouvron ! Est-ce que tu peux m'indiquer 
+adresse ?
+3. Papy la tour Eiffel se situe où? 
 
 **About that Readme**  
 
@@ -40,7 +42,7 @@ pip install -r ../../requirements.txt
 
 LINUX
 
-source env/bin/activate
+source venv/scripts/activate
 
 WINDOWS
 
