@@ -39,7 +39,9 @@ class Controller(object):
 
         here_api = Hereapi()
         result_texte = parser_texte.get_allowed_text(user_text)
+        print(result_texte)
         location = here_api.get_coord(result_texte)
+        print(location)
         return location
 
     def get_paragraph_from_wiki(self, coord):

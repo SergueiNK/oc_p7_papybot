@@ -36,7 +36,6 @@ class Wikiapi:
                 constants.url_request_wikipedia,
                 self.api_wiki_params
             )
-
             if request_response.status_code == 200:
                 return self.extract_wiki_section(request_response.json())
             else:

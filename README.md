@@ -1,6 +1,16 @@
 # oc_p7_papybot
-   **Purbeurre**
+   **Papybot**
 
+Papybot website https://papybot-spatial.herokuapp.com/
+
+**Test the websites**
+
+In case if you want to test the website, you will find below some users 
+questions that will works all of time. 
+Because of parser is not yet perfect and work all of the time. 
+
+1. Salut papy est ce que tu peux m'indiquer ou se trouve Openclassroom Paris ?
+2. Salut 
 
 **About that Readme**  
 

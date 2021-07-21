@@ -105,4 +105,5 @@ stopwords_list = [
     "étaient", "étais", "était", "étant",
     "été", "être", "ô", "Salut", "salut",
     "papy", "Papy", "m'", "trouve", "trouver", "?", "!", ".", ";", "%",
-    "m'indiquer", "t'as", "Est-ce", "veux", "aller", "adresse"]
+    "m'indiquer", "t'as", "Est-ce", "veux", "aller", "adresse", "situe",
+    "voyage", "partir"]
